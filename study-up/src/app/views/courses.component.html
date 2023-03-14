@@ -1,0 +1,20 @@
+<div class="courses-wrapper">
+  <div
+    *ngFor="let course of courses | paginate: { itemsPerPage, currentPage }"
+    class="course-tab"
+  >
+    <img [src]="course.previewImageLink + '/cover.webp'" alt="preview-image" />
+    <div class="course-content">
+      <p class="course-title">{{ course.title }}</p>
+      <div class="text info">
+        <p><span>Lessons:</span>{{ course.lessonsCount }}</p>
+        <p><span>Skills:</span>{{ course.meta.skills }}</p>
+        <p><span>Rating:</span>{{ course.rating }}</p>
+      </div>
+      <button class="btn btn-primary btn-jittery">Read more</button>
+    </div>
+  </div>
+  <pagination-controls
+    (pageChange)="currentPage = $event"
+  ></pagination-controls>
+</div>

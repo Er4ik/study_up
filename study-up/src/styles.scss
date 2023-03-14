@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/assets/styles/variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Inter', 'Inter Placeholder', sans-serif;
+}
+
+.btn {
+  border: none;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $btn-padding;
+  height: $btn-height;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  color: $black;
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 8px;
+  font-size: $font-size;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+
+.btn-primary {
+  background-color: $black;
+  color: $white;
+  transition: 0.2s ease-out;
+
+  &:hover {
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    opacity: 0.6;
+  }
+}
+
+.text {
+  font-size: $font-size;
+  letter-spacing: 0px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow: visible;
+  position: relative;
+  font-weight: 500;
+  font-style: normal;
+}

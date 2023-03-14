@@ -1,0 +1,181 @@
+@import 'src/assets/styles/variables';
+
+.courses-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .course-tab {
+    width: 100%;
+    height: 220px;
+    margin: 30px 0;
+    background: $white;
+    box-shadow: $box-shadow;
+    border-radius: 20px;
+    display: flex;
+
+    & > img {
+      width: 400px;
+      height: 100%;
+      border-radius: 20px 0 0 20px;
+    }
+
+    .course-content {
+      padding: 20px;
+      width: 70%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      &:hover {
+        .btn-jittery {
+          animation: jittery 8s infinite;
+        }
+      }
+
+      .course-title {
+        overflow: visible;
+        position: relative;
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      .info {
+        color: $black;
+        height: 70%;
+        justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+
+        & span {
+          font-weight: $font-bold;
+          margin-right: 5px;
+        }
+      }
+
+      & > button {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        width: 100px;
+      }
+    }
+  }
+
+  .link {
+    width: 6rem;
+    height: 6rem;
+    display: inline-block;
+    font: 300 1.55rem/1.4 'Josefin Sans';
+    text-transform: uppercase;
+    letter-spacing: 0.1175em;
+    word-spacing: 0.3em;
+    text-decoration: none;
+
+    &__svg {
+      width: 100%;
+      height: auto;
+      transform-box: fill-box;
+      fill: $black;
+      stroke: $black;
+      stroke-width: 0.05em;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    &__cloud {
+      transform-origin: 50% 50%;
+      animation: rotate normal infinite 3 * $rotationDuration linear;
+      fill: rgba(255, 255, 255, 0.15);
+    }
+
+    &__face,
+    &__arrow {
+      transform-origin: 50% 50%;
+      transition: transform $hoverDuration / 2 $easeIn;
+
+      .link:hover & {
+        transform: scale(1.1);
+        transition: transform $hoverDuration $easeOut;
+      }
+    }
+
+    &__arrow {
+      stroke-width: 0.075em;
+    }
+
+    &__text {
+      animation: rotateReverse normal infinite $rotationDuration linear;
+      transform-origin: 50% 50%;
+
+      .link:hover & {
+        animation-play-state: paused;
+      }
+    }
+
+    &--alt {
+      font-size: 1.15rem;
+      letter-spacing: 0;
+      word-spacing: 0;
+    }
+  }
+
+  ::ng-deep {
+    .pagination-previous,
+    .pagination-next {
+      display: none !important;
+    }
+
+    .current {
+      background: $black;
+    }
+  }
+}
+
+@keyframes jittery {
+  5%,
+  50% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(0.9);
+  }
+
+  15% {
+    transform: scale(1.1);
+  }
+
+  20% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+
+  25% {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  30% {
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  35% {
+    transform: scale(1.1) rotate(2deg);
+  }
+
+  40% {
+    transform: scale(1.1) rotate(0);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateReverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}

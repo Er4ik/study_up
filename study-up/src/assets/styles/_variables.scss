@@ -1,0 +1,35 @@
+/*
+* Colors
+*/
+$black: #222222;
+$white: #ffffff;
+$gray: #888888;
+$blue-dark: #001122;
+
+$shadow: rgba(0, 0, 0, 0.05);
+
+/*
+* Shadows
+*/
+$box-shadow: 0px 0.796841278193901px 2.3905238345817033px -0.625px $shadow,
+  0px 2.413677098392273px 7.2410312951768185px -1.25px $shadow,
+  0px 6.3802836426702925px 19.140850928010877px -1.875px $shadow,
+  0px 20px 60px -2.5px $shadow;
+
+/*
+* Sizes
+*/
+$font-size: 14px;
+$font-bold: 600;
+$btn-height: 30px;
+$btn-padding: 15px;
+
+/*
+*
+*/
+
+$rotationDuration: 20s;
+$hoverDuration: 0.3s;
+
+$easeIn: cubic-bezier(0.32, 0, 0.67, 0);
+$easeOut: cubic-bezier(0.33, 1, 0.68, 1);
