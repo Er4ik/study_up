@@ -1,0 +1,68 @@
+@import 'src/assets/styles/variables';
+
+.course-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .main-content {
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .video {
+            width: 55vw;
+            height: 60vh;
+            box-shadow: $box-shadow;
+            border-radius: $border-radius-background;
+        }
+    }
+
+    .scroll-container {
+        overflow: hidden;
+        width: 100%;
+        margin: 80px auto;
+    }
+
+    .scroll-text,
+    .scroll-text-right {
+        display: flex;
+        justify-content: space-between;
+        white-space: nowrap;
+        animation: move-text 25s linear infinite;
+    }
+
+    .scroll-text-right {
+        animation: move-text-right 25s linear infinite;
+    }
+
+    .lessons {
+        width: 70%;
+
+        .item {
+            margin: 30px auto;
+        }
+    }
+}
+
+@keyframes move-text {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes move-text-right {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}

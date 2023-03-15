@@ -4,17 +4,34 @@
     class="course-tab"
   >
     <img [src]="course.previewImageLink + '/cover.webp'" alt="preview-image" />
+
     <div class="course-content">
-      <p class="course-title">{{ course.title }}</p>
+      <h3 class="course-title">{{ course.title }}</h3>
       <div class="text info">
-        <p><span>Lessons:</span>{{ course.lessonsCount }}</p>
-        <p><span>Skills:</span>{{ course.meta.skills }}</p>
-        <p><span>Rating:</span>{{ course.rating }}</p>
+        <div class="info-content">
+          <p>{{ course.description }}</p>
+        </div>
+        <div *ngIf="course.meta.skills.length" class="info-content">
+          <span>Skills:</span>
+          <div class="skills">
+            <p *ngFor="let skill of course.meta.skills">{{ skill }}</p>
+          </div>
+        </div>
+        <div class="info-content">
+          <p class="lessons"><span>Lessons:</span>{{ course.lessonsCount }}</p>
+        </div>
       </div>
-      <button class="btn btn-primary btn-jittery">Read more</button>
+    </div>
+
+    <button [routerLink]="['/courses', course.id]" class="btn btn-primary btn-jittery">Read more</button>
+    <div class="rating">
+      <i-bs *ngFor="let start of numberReturn(course.rating)" name="star-fill" width="15" height="15"></i-bs>
+      <i-bs *ngIf="course.rating % 1 !== 0" name="star-half" width="15" height="15"></i-bs>
     </div>
   </div>
+
   <pagination-controls
     (pageChange)="currentPage = $event"
   ></pagination-controls>
+  <i-bs (click)="scrollToTop()" class="scroll-to-top" name="balloon" width="35" height="35"></i-bs>
 </div>

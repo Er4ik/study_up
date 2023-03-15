@@ -26,7 +26,7 @@ export interface CoursePreview {
   id: string;
   title: string;
   tags: string[];
-  launchDate: Date;
+  launchDate: Date | string;
   status: string;
   description: string;
   duration: number;
@@ -37,6 +37,6 @@ export interface CoursePreview {
   meta: CoursePreviewMeta;
 }
 
-export interface CourseDetail extends CoursePreview {
+export interface CourseDetails extends CoursePreview {
   lessons: Lesson[];
 }

@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ActivatedRoute } from "@angular/router"
+
+import { CourseService } from 'src/app/state/course.service';
+import { CourseDetails } from 'src/app/state/model/course.model';
 
 @Component({
   selector: 'app-course-detail',
@@ -6,5 +10,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./course-detail.component.scss'],
 })
 export class CourseDetailComponent {
-  title = 'study-up';
+  course!: CourseDetails;
+  courseId!: string;
+
+  constructor(
+    private readonly courseService: CourseService,
+    private route: ActivatedRoute
+  ) { }
+
+  async ngOnInit(): Promise<void> {
+    this.route.params.subscribe(params => {
+      this.courseId = params['courseId'];
+    });
+    this.course = await this.courseService.getCourseDetails(this.courseId);
+  }
+
 }
