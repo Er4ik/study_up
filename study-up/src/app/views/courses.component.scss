@@ -167,6 +167,12 @@
     cursor: pointer;
     z-index: 999;
   }
+
+  .spinner-border {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+  }
 }
 
 @keyframes jittery {

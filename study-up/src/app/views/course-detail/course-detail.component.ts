@@ -12,6 +12,7 @@ import { CourseDetails } from 'src/app/state/model/course.model';
 export class CourseDetailComponent {
   course!: CourseDetails;
   courseId!: string;
+  isLoading = false;
 
   constructor(
     private readonly courseService: CourseService,
@@ -22,6 +23,12 @@ export class CourseDetailComponent {
     this.route.params.subscribe((params) => {
       this.courseId = params['courseId'];
     });
-    this.course = await this.courseService.getCourseDetails(this.courseId);
+    this.courseService
+      .getCourseDetails(this.courseId)
+      .then((data) => {
+        this.course = data;
+        this.isLoading = false;
+      })
+      .catch((err) => console.log('Error fetching course details ->', err));
   }
 }

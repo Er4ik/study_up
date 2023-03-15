@@ -4,7 +4,7 @@
     <div class="video">
       <img
         [src]="course.meta.courseVideoPreview.previewImageLink + '/cover.webp'"
-        alt=""
+        alt="Nothing"
       />
     </div>
     <p>{{ course.description }}</p>
@@ -25,14 +25,24 @@
           width="320"
           height="240"
           [src]="lesson.previewImageLink + '/' + lesson.order + '.webp'"
-          alt=""
+          alt="Nothing"
         />
-        <!-- <div class="video-container">
-                    <video width="320" height="240" controls>
-                        <source  type="application/x-mpegURL">
-                    </video>
-                </div> -->
+        <div class="video-container">
+          <video width="320" height="240" controls>
+            <source [src]="lesson.link" type="application/x-mpegURL" />
+          </video>
+        </div>
       </div>
     </div>
   </div>
+  <div *ngIf="isLoading" class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <i-bs
+    routerLink="../"
+    class="arrow-back"
+    name="arrow-left"
+    width="45"
+    height="45"
+  ></i-bs>
 </div>

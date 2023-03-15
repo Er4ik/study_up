@@ -45,6 +45,24 @@
       margin: 30px auto;
     }
   }
+
+  .spinner-border {
+    position: absolute;
+    top: 45%;
+    left: 48%;
+    z-index: 999;
+  }
+
+  .arrow-back {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 999;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 @keyframes move-text {
