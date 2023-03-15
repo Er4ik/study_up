@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { ActivatedRoute } from "@angular/router"
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { CourseService } from 'src/app/state/course.service';
 import { CourseDetails } from 'src/app/state/model/course.model';
@@ -15,14 +15,13 @@ export class CourseDetailComponent {
 
   constructor(
     private readonly courseService: CourseService,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+  ) {}
 
   async ngOnInit(): Promise<void> {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       this.courseId = params['courseId'];
     });
     this.course = await this.courseService.getCourseDetails(this.courseId);
   }
-
 }

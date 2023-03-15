@@ -1,5 +1,5 @@
 import { CoursePreview } from './../state/model/course.model';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../state/course.service';
 
 @Component({

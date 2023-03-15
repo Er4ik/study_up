@@ -7,7 +7,7 @@ import { AuthService } from './state/auth.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(private readonly authService: AuthService) { }
+  constructor(private readonly authService: AuthService) {}
 
   async ngOnInit() {
     if (!this.authService.isAuthenticated()) {

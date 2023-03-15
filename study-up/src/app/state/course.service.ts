@@ -13,11 +13,15 @@ export class CourseService {
   constructor(private readonly http: HttpService) {}
 
   async getCourses() {
-    const { courses } = await this.http.get<CoursePreview[]>(`${this.url}core/preview-courses`).toPromise() as any;
+    const { courses } = (await this.http
+      .get<CoursePreview[]>(`${this.url}core/preview-courses`)
+      .toPromise()) as any;
     return courses;
   }
 
   async getCourseDetails(courseId: string): Promise<CourseDetails> {
-    return await this.http.get<CourseDetails>(`${this.url}core/preview-courses/${courseId}`).toPromise() as CourseDetails;
+    return (await this.http
+      .get<CourseDetails>(`${this.url}core/preview-courses/${courseId}`)
+      .toPromise()) as CourseDetails;
   }
 }

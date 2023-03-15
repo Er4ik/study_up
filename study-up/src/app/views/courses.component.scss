@@ -12,7 +12,7 @@
     margin: 30px 0;
     background: $white;
     box-shadow: $box-shadow;
-    border-radius:$border-radius-background;
+    border-radius: $border-radius-background;
     display: flex;
 
     & > img {
@@ -85,7 +85,7 @@
       justify-content: center;
       align-items: center;
 
-      &>i-bs {
+      & > i-bs {
         margin: 0px 2px;
       }
     }

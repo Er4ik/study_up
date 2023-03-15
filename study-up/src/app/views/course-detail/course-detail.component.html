@@ -1,31 +1,38 @@
-
 <div class="course-wrapper">
-    <div class="main-content">
-        <h2>{{ course.title }}</h2>
-        <div class="video">
-            <img [src]="course.meta.courseVideoPreview.previewImageLink + '/cover.webp'" alt="" />
-        </div>
-        <p>{{ course.description }}</p>
+  <div class="main-content">
+    <h2>{{ course.title }}</h2>
+    <div class="video">
+      <img
+        [src]="course.meta.courseVideoPreview.previewImageLink + '/cover.webp'"
+        alt=""
+      />
     </div>
-    <div class="scroll-container">
-        <div class="scroll-text">
-            <p *ngFor="let data of [].constructor(15)">Study Up!</p>
-        </div>
-        <div class="scroll-text-right">
-            <p *ngFor="let data of [].constructor(15)">Study Up!</p>
-        </div>
+    <p>{{ course.description }}</p>
+  </div>
+  <div class="scroll-container">
+    <div class="scroll-text">
+      <p *ngFor="let data of [].constructor(15)">Study Up!</p>
     </div>
-    <div class="lessons">
-        <div class="item" *ngFor="let lesson of course.lessons">
-            <h3>{{ lesson.order + ' lesson: ' + lesson.title }}</h3>
-            <div class="video-lesson">
-                <img width="320" height="240"  [src]="lesson.previewImageLink  + '/' + lesson.order + '.webp'" alt="">
-                <!-- <div class="video-container">
+    <div class="scroll-text-right">
+      <p *ngFor="let data of [].constructor(15)">Study Up!</p>
+    </div>
+  </div>
+  <div class="lessons">
+    <div class="item" *ngFor="let lesson of course.lessons">
+      <h3>{{ lesson.order + ' lesson: ' + lesson.title }}</h3>
+      <div class="video-lesson">
+        <img
+          width="320"
+          height="240"
+          [src]="lesson.previewImageLink + '/' + lesson.order + '.webp'"
+          alt=""
+        />
+        <!-- <div class="video-container">
                     <video width="320" height="240" controls>
                         <source  type="application/x-mpegURL">
                     </video>
                 </div> -->
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </div>

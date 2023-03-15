@@ -23,15 +23,36 @@
       </div>
     </div>
 
-    <button [routerLink]="['/courses', course.id]" class="btn btn-primary btn-jittery">Read more</button>
+    <button
+      [routerLink]="['/courses', course.id]"
+      class="btn btn-primary btn-jittery"
+    >
+      Read more
+    </button>
     <div class="rating">
-      <i-bs *ngFor="let start of numberReturn(course.rating)" name="star-fill" width="15" height="15"></i-bs>
-      <i-bs *ngIf="course.rating % 1 !== 0" name="star-half" width="15" height="15"></i-bs>
+      <i-bs
+        *ngFor="let start of numberReturn(course.rating)"
+        name="star-fill"
+        width="15"
+        height="15"
+      ></i-bs>
+      <i-bs
+        *ngIf="course.rating % 1 !== 0"
+        name="star-half"
+        width="15"
+        height="15"
+      ></i-bs>
     </div>
   </div>
 
   <pagination-controls
     (pageChange)="currentPage = $event"
   ></pagination-controls>
-  <i-bs (click)="scrollToTop()" class="scroll-to-top" name="balloon" width="35" height="35"></i-bs>
+  <i-bs
+    (click)="scrollToTop()"
+    class="scroll-to-top"
+    name="balloon"
+    width="35"
+    height="35"
+  ></i-bs>
 </div>
