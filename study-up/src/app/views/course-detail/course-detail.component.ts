@@ -31,7 +31,7 @@ export class CourseDetailComponent {
         this.course = data;
       })
       .catch((err) => console.log('Error fetching course details ->', err));
-  
+
     this.isLoading = false;
 
     if (!this.course) {

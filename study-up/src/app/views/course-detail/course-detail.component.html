@@ -2,9 +2,18 @@
   <div class="main-content">
     <h2>{{ course.title }}</h2>
     <div class="video">
-      <video id="my-player" class="video-js" controls preload="auto"
-        [poster]="//vjs.zencdn.net/v/oceans.png" data-setup='{}'>
-        <source [src]="course.meta.courseVideoPreview.link" type="application/x-mpegURL" />
+      <video
+        id="my-player"
+        class="video-js"
+        controls
+        preload="auto"
+        [poster]=" //vjs.zencdn.net/v/oceans.png"
+        data-setup="{}"
+      >
+        <source
+          [src]="course.meta.courseVideoPreview.link"
+          type="application/x-mpegURL"
+        />
       </video>
     </div>
     <p>{{ course.description }}</p>
@@ -22,7 +31,16 @@
       <h3>{{ lesson.order + ' lesson: ' + lesson.title }}</h3>
       <div class="video-lesson">
         <div class="video-container">
-          <video id="my-player" class="video-js" controls preload="auto" [poster]="lesson.previewImageLink + '/lesson-' + lesson.order + '.webp'" data-setup='{}'>
+          <video
+            id="my-player"
+            class="video-js"
+            controls
+            preload="auto"
+            [poster]="
+              lesson.previewImageLink + '/lesson-' + lesson.order + '.webp'
+            "
+            data-setup="{}"
+          >
             <source [src]="lesson.link" type="application/x-mpegURL" />
           </video>
         </div>

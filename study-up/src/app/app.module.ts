@@ -21,11 +21,7 @@ import { HttpService } from './state/services/http.service';
     NgxPaginationModule,
     NgxBootstrapIconsModule.pick(allIcons),
   ],
-  providers: [
-    CourseService, 
-    AuthService, 
-    HttpService,
-  ],
+  providers: [CourseService, AuthService, HttpService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

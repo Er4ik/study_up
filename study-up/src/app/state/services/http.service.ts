@@ -12,7 +12,7 @@ export class HttpService {
   private getHeaders(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.authService.getToken()}`
+      Authorization: `Bearer ${this.authService.getToken()}`,
     });
   }
 
