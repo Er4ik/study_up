@@ -6,11 +6,11 @@ import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CourseService } from './state/course.service';
+import { CourseService } from './state/services/course.service';
 import { CourseDetailComponent } from './views/course-detail/course-detail.component';
 import { CoursesComponent } from './views/courses.component';
-import { AuthService } from './state/auth.service';
-import { HttpService } from './state/http.service';
+import { AuthService } from './state/services/auth.service';
+import { HttpService } from './state/services/http.service';
 
 @NgModule({
   declarations: [AppComponent, CoursesComponent, CourseDetailComponent],
@@ -21,7 +21,11 @@ import { HttpService } from './state/http.service';
     NgxPaginationModule,
     NgxBootstrapIconsModule.pick(allIcons),
   ],
-  providers: [CourseService, AuthService, HttpService],
+  providers: [
+    CourseService, 
+    AuthService, 
+    HttpService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

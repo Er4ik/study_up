@@ -2,10 +2,10 @@
   <div class="main-content">
     <h2>{{ course.title }}</h2>
     <div class="video">
-      <img
-        [src]="course.meta.courseVideoPreview.previewImageLink + '/cover.webp'"
-        alt="Nothing"
-      />
+      <video id="my-player" class="video-js" controls preload="auto"
+        [poster]="//vjs.zencdn.net/v/oceans.png" data-setup='{}'>
+        <source [src]="course.meta.courseVideoPreview.link" type="application/x-mpegURL" />
+      </video>
     </div>
     <p>{{ course.description }}</p>
   </div>
@@ -21,14 +21,8 @@
     <div class="item" *ngFor="let lesson of course.lessons">
       <h3>{{ lesson.order + ' lesson: ' + lesson.title }}</h3>
       <div class="video-lesson">
-        <img
-          width="320"
-          height="240"
-          [src]="lesson.previewImageLink + '/' + lesson.order + '.webp'"
-          alt="Nothing"
-        />
         <div class="video-container">
-          <video width="320" height="240" controls>
+          <video id="my-player" class="video-js" controls preload="auto" [poster]="lesson.previewImageLink + '/lesson-' + lesson.order + '.webp'" data-setup='{}'>
             <source [src]="lesson.link" type="application/x-mpegURL" />
           </video>
         </div>

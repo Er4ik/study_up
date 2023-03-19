@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { CourseService } from 'src/app/state/course.service';
+import { CourseService } from 'src/app/state/services/course.service';
 import { CourseDetails } from 'src/app/state/model/course.model';
+import { courseMock } from 'src/app/state/util/mocks';
 
 @Component({
   selector: 'app-course-detail',
@@ -23,12 +24,18 @@ export class CourseDetailComponent {
     this.route.params.subscribe((params) => {
       this.courseId = params['courseId'];
     });
+
     this.courseService
       .getCourseDetails(this.courseId)
       .then((data) => {
         this.course = data;
-        this.isLoading = false;
       })
       .catch((err) => console.log('Error fetching course details ->', err));
+  
+    this.isLoading = false;
+
+    if (!this.course) {
+      this.course = courseMock;
+    }
   }
 }

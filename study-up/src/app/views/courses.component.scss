@@ -70,6 +70,11 @@
       bottom: 1rem;
       right: 1rem;
       width: 100px;
+
+      &:hover {
+        opacity: 1;
+        background: $purple;
+      }
     }
 
     .rating {

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { environment } from './../../environments/environment';
+import { environment } from 'src/environments/environment';
 import { HttpService } from './http.service';
-import { CourseDetails, CoursePreview } from './model/course.model';
+import { CourseDetails, CoursePreview } from '../model/course.model';
 
 @Injectable({
   providedIn: 'root',

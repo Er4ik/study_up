@@ -10,19 +10,13 @@ export class HttpService {
   constructor(private http: HttpClient, private authService: AuthService) {}
 
   private getHeaders(): HttpHeaders {
-    const headersConfig: any = {
+    return new HttpHeaders({
       'Content-Type': 'application/json',
-      Accept: 'application/json',
-    };
-
-    if (this.authService.isAuthenticated()) {
-      headersConfig['Authorization'] = `Bearer ${this.authService.getToken()}`;
-    }
-
-    return new HttpHeaders(headersConfig);
+      'Authorization': `Bearer ${this.authService.getToken()}`
+    });
   }
 
-  get<T>(url: string, params?: any): Observable<T> {
-    return this.http.get<T>(url, { headers: this.getHeaders(), params });
+  get<T>(url: string): Observable<T> {
+    return this.http.get<T>(url, { headers: this.getHeaders() });
   }
 }
